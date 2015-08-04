@@ -13,10 +13,10 @@ For example, to get the editable tree, you would do this to get an editable copy
 
 ```
 Expression immutable = someExpression; //you can’t change immutable directly
+
 EditableExpression mutable = EditableExpression.CreateEditableExpression(immutable);
-//..then do this to convert it back
-Expression newCopy = mutable.ToExpression;
-//pretend there are parens after ToExpression -  shortcoming in my blog software that does not allow me to say ToExpression with parens afterwards
+
+Expression newCopy = mutable.ToExpression(); //..then do this to convert it back
 ```
 
 
