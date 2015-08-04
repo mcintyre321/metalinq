@@ -36,8 +36,10 @@ namespace ExpressionBuilder
         public static MethodInfo FromSerializableForm(this MethodInfo methodInfo, string serializedValue)
         {
             string[] fullName = SplitString(serializedValue);
-            string name = fullName[1];            
-            MethodInfo method = (from m in Type.GetType(fullName[0]).GetMethods()
+            string name = fullName[1];
+            var type = Type.GetType(fullName[0]);
+
+            MethodInfo method = (from m in type.GetRuntimeMethods()
                                  where m.ToString() == name
                                  select m).First();
 
@@ -58,9 +60,11 @@ namespace ExpressionBuilder
         {
             string[] fullName = SplitString(serializedValue);
             string name = fullName[1];
-            MemberInfo member = (from m in Type.GetType(fullName[0]).GetMembers()
-                                     where m.ToString() == name
-                                     select m).First();
+            var type = Type.GetType(fullName[0]);
+            MemberInfo member = type.GetRuntimeMethods()
+                .Cast<MemberInfo>()
+                .Concat(type.GetRuntimeFields()).Concat(type.GetRuntimeProperties())
+                .First(m => m.ToString() == name);
             return member;
 
         }
@@ -81,7 +85,7 @@ namespace ExpressionBuilder
             {
                 string[] fullName = SplitString(serializedValue);
                 string name = fullName[1];
-                ConstructorInfo newObj = (from m in Type.GetType(fullName[0]).GetConstructors()
+                ConstructorInfo newObj = (from m in Type.GetType(fullName[0]).GetTypeInfo().DeclaredConstructors
                                           where m.ToString() == name
                                           select m).First();
                 return newObj;

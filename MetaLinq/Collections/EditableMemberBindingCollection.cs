@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Linq.Expressions;
+using System.Runtime.Serialization;
 
 namespace ExpressionBuilder
 {
-    [Serializable]
+    [DataContract]
     public class EditableMemberBindingCollection : List<EditableMemberBinding>
     {
         public EditableMemberBindingCollection() : base() { }
