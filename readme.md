@@ -11,15 +11,14 @@ The ExpressionBuilder namespace allows you to create an Editable Shadow of an ex
 
 For example, to get the editable tree, you would do this to get an editable copy:
 
-Expression immutable = someExpression; //you can’t change immutable directly
-
+```
+Expression immutable = someExpression; //you canâ€™t change immutable directly
 EditableExpression mutable = EditableExpression.CreateEditableExpression(immutable);
-
 //..then do this to convert it back
-
 Expression newCopy = mutable.ToExpression;
-
 //pretend there are parens after ToExpression -  shortcoming in my blog software that does not allow me to say ToExpression with parens afterwards
+```
+
 
 In other words, you can now edit expression trees.  ExpressionBuilder is to Expressions what StringBuilder is to Strings.
 
