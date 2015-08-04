@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <title>MetaLinq</title>
+    <authors>Harry McIntyre / Aaron Erickson</authors>
+    <owners>Harry McIntyre</owners>
+    <licenseUrl>https://github.com/mcintyre321/MetaLinq/blob/master/License.txt</licenseUrl>
+    <projectUrl>https://github.com/mcintyre321/MetaLinq</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>
+      Library for serializing, modifying and deserializing LINQ Expressions
+    </description>
+    <copyright>Copyright 2015</copyright>
+    <tags>LINQ, Expressions, Serialization, Deserialization</tags>
+  </metadata>
+</package>
