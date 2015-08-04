@@ -1,0 +1,83 @@
+﻿<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D894C79E-8B14-49D1-839C-6F2B429CFA1C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ExpressionBuilder</RootNamespace>
+    <AssemblyName>ExpressionBuilder</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Collections\EditableMemberBindingCollection.cs" />
+    <Compile Include="Collections\EditableElementInitCollection.cs" />
+    <Compile Include="Collections\EditableMemberInfoCollection.cs" />
+    <Compile Include="Expressions\EditableBinaryExpression.cs" />
+    <Compile Include="Expressions\EditableConditionalExpression.cs" />
+    <Compile Include="Expressions\EditableConstantExpression.cs" />
+    <Compile Include="Expressions\EditableExpression.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Collections\EditableExpressionCollection.cs" />
+    <Compile Include="Expressions\EditableInvocationExpression.cs" />
+    <Compile Include="Expressions\EditableLambdaExpression.cs" />
+    <Compile Include="Expressions\EditableListInitExpression.cs" />
+    <Compile Include="Expressions\EditableMemberExpression.cs" />
+    <Compile Include="Expressions\EditableMemberInitExpression.cs" />
+    <Compile Include="Expressions\EditableMethodCallExpression.cs" />
+    <Compile Include="Expressions\EditableNewArrayExpression.cs" />
+    <Compile Include="Expressions\EditableNewExpression.cs" />
+    <Compile Include="Expressions\EditableParameterExpression.cs" />
+    <Compile Include="Expressions\EditableTypeBinaryExpression.cs" />
+    <Compile Include="Expressions\EditableUnaryExpression.cs" />
+    <Compile Include="Extensions\EditableExpressionExtensions.cs" />
+    <Compile Include="Extensions\ExpressionExtensions.cs" />
+    <Compile Include="Extensions\ReflectionExtensions.cs" />
+    <Compile Include="Initializers\EditableElementInit.cs" />
+    <Compile Include="Initializers\EditableMemberAssignment.cs" />
+    <Compile Include="Initializers\EditableMemberBinding.cs" />
+    <Compile Include="Initializers\EditableMemberListBinding.cs" />
+    <Compile Include="Initializers\EditableMemberMemberBinding.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
