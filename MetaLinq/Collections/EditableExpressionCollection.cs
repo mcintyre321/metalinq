@@ -1,10 +1,8 @@
-﻿using System;
-using System.Linq;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 using System.Linq.Expressions;
+using MetaLinq.Expressions;
 
-namespace ExpressionBuilder
+namespace MetaLinq.Collections
 {
     public class EditableExpressionCollection : List<EditableExpression>
     {

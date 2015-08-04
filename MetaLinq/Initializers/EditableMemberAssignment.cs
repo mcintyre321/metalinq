@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Linq.Expressions;
 using System.Runtime.Serialization;
-using System.Linq.Expressions;
+using MetaLinq.Expressions;
 
-namespace ExpressionBuilder
+namespace MetaLinq.Initializers
 {
     [DataContract]
     public class EditableMemberAssignment : EditableMemberBinding

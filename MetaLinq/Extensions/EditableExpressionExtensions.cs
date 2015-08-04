@@ -1,9 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
+using MetaLinq.Expressions;
+using MetaLinq.Initializers;
 
-namespace ExpressionBuilder
+namespace MetaLinq.Extensions
 {
     public static class EditableExpressionExtension
     {

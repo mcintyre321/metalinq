@@ -1,11 +1,10 @@
 ﻿using System;
-using System.Linq;
 using System.Collections.Generic;
-using System.Text;
 using System.Linq.Expressions;
 using System.Runtime.Serialization;
+using MetaLinq.Collections;
 
-namespace ExpressionBuilder
+namespace MetaLinq.Expressions
 {
     [DataContract]
     public class EditableNewArrayExpression : EditableExpression

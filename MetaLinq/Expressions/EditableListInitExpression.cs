@@ -1,12 +1,11 @@
-﻿using System;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Collections.Generic;
-using System.Text;
 using System.Linq.Expressions;
 using System.Runtime.Serialization;
-using System.Xml.Serialization;
+using MetaLinq.Collections;
+using MetaLinq.Initializers;
 
-namespace ExpressionBuilder
+namespace MetaLinq.Expressions
 {
     [DataContract]
     public class EditableListInitExpression : EditableExpression

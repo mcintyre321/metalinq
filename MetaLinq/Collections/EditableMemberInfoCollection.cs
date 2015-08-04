@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
 using System.Reflection;
+using MetaLinq.Extensions;
 
-namespace ExpressionBuilder
+namespace MetaLinq.Collections
 {
     public class EditableMemberInfoCollection : List<string>
     {
