@@ -11,6 +11,8 @@ namespace MetaLinq.Expressions
         // Members
         private static Dictionary<string, ParameterExpression> _usableParameters = new Dictionary<string, ParameterExpression>();
 
+        private static object _createParameterLock = new object();
+
         // Properties
         [DataMember]
         public string Name 
@@ -43,18 +45,21 @@ namespace MetaLinq.Expressions
         // Methods
         static public ParameterExpression CreateParameter(Type type, string name)
         {
-            ParameterExpression parameter = null;
-            string key = type.AssemblyQualifiedName + Environment.NewLine + name;
-            if (_usableParameters.ContainsKey(key))
+            lock (_createParameterLock) // Avoid concurrent modifications to _usableParameters
             {
-                parameter = _usableParameters[key] as ParameterExpression;
+                ParameterExpression parameter = null;
+                string key = type.AssemblyQualifiedName + Environment.NewLine + name;
+                if (_usableParameters.ContainsKey(key))
+                {
+                    parameter = _usableParameters[key] as ParameterExpression;
+                }
+                else
+                {
+                    parameter = Expression.Parameter(type, name);
+                    _usableParameters.Add(key, parameter);
+                }
+                return parameter;
             }
-            else
-            {
-                parameter = Expression.Parameter(type, name);
-                _usableParameters.Add(key, parameter);
-            }
-            return parameter;
         }
 
         public override Expression ToExpression()
